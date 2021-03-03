@@ -1,8 +1,9 @@
-class Url {
+class ShortURL {
   constructor(originalUrl) {
     this.originalUrl = originalUrl;
-    this.shortUrl = this.addShortUrl();
+    this.shortedUrl = this.addShortUrl();
     this.creationDate = Date.now();
+    this.redirectCount = 0;
   }
 
   addShortUrl() {
@@ -20,9 +21,13 @@ class Url {
     return id;
   }
 
-  get creationDate() {
-    return new Date(this.creationDate).toISOString();
-  }
+  // get creationDate() {
+  //   return new Date(this.creationDate).toISOString();
+  // }
+
+  // set creationDate() {
+  //   this.creationDate = Date.now();
+  // }
 }
 
-module.exports = { Url };
+module.exports = { ShortURL };
