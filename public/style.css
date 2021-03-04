@@ -5,6 +5,7 @@ body {
   background-color: #fff;
   text-align: center;
   line-height: 1.4em;
+  flex-direction: column;
 }
 
 main {
@@ -15,8 +16,6 @@ main {
 h3 {
   margin-top: 30px;
 }
-
-
 
 .user-stories li {
   margin-bottom: 1em;
@@ -37,10 +36,13 @@ label {
 }
 
 input {
-  padding: 5px;
+  padding: 15px;
 }
 
-input[type='text'] {
+input[type="text"] {
   width: 220px;
   text-align: center;
+}
+
+#linkSpan {
 }

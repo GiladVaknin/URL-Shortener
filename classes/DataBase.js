@@ -63,6 +63,21 @@ class DataBase {
     } else return exist;
   }
 
+  shortIDtoOriginal(url) {
+    return new Promise((resolve, reject) => {
+      const direct = this.URLS.findIndex((urlObj) => urlObj.shortedUrl === url);
+      console.log(direct);
+      if (direct === -1) {
+        reject(() => {
+          throw new Error("URL wasn't shorted");
+        });
+      } else {
+        console.log(this.URLS[direct].originalUrl);
+        resolve(this.URLS[direct].originalUrl);
+      }
+    });
+  }
+
   getData() {
     const promiseBinData = fs.readFile("./bins/ShortedURLS.json").catch((e) => {
       throw new Error(`Can not get data: ${e}`);
