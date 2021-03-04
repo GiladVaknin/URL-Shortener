@@ -18,14 +18,11 @@ class DataBase {
         .toISOString()
         .slice(0, 19)
         .replace("T", " ");
-      urlItem.redirectCount++;
       this.URLS.push(urlItem);
       return this.save();
     } else {
       return new Promise((resolve, reject) => {
         const index = this.URLS[urlIndex];
-        this.URLS[urlIndex].redirectCount++;
-        this.save();
         if (index) resolve(index);
         else {
           reject((e) => {

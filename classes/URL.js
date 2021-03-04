@@ -20,14 +20,6 @@ class ShortURL {
 
     return id;
   }
-
-  // get creationDate() {
-  //   return new Date(this.creationDate).toISOString();
-  // }
-
-  // set creationDate() {
-  //   this.creationDate = Date.now();
-  // }
 }
 
 module.exports = { ShortURL };
