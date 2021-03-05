@@ -3,6 +3,9 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const shortUrl = require("./routes/DataBaseRoute");
+const DataBase = require("../URL-Shortener/classes/DataBase");
+const { resolve } = require("path");
+const db = new DataBase();
 
 app.use(cors());
 app.use("/shortURL", shortUrl);

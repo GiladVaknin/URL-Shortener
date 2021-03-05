@@ -17,9 +17,14 @@ class ShortURL {
       let rnd = Math.floor(Math.random() * 62);
       id += arr[rnd];
     }
-
-    return id;
+    if (ids.includes(id)) {
+      id = this.addShortUrl();
+    } else {
+      ids.push(id);
+      return id;
+    }
   }
 }
 
+const ids = [];
 module.exports = { ShortURL };

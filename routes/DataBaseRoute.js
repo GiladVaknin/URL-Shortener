@@ -6,12 +6,10 @@ const DataBase = require("../classes/DataBase.js");
 const db = new DataBase();
 router.use(json());
 
-router.route("/:url").get((req, res) => {
+router.route("/new/:url").get((req, res) => {
   const url = req.params.url;
-
   db.shortIDtoOriginal(url)
     .then((data) => {
-      //   console.log(data);
       res.status(302).redirect(data);
     })
     .catch((e) => {
@@ -29,4 +27,18 @@ router.route("/").post((req, res) => {
       res.status(400).send(e);
     });
 });
+
+router.get("/statistic/:shorturlId", (req, res) => {
+  const shorturl = req.params.shorturlId;
+  db.statistics(shorturl)
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      }
+    })
+    .catch((e) => {
+      res.status(404).send(e);
+    });
+});
+
 module.exports = router;
