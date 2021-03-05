@@ -5,21 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ShortendUrl</title>
-    <link rel="stylesheet" href="/public/style.css" />
+    <link rel="stylesheet" href="/public/newStyle.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
     <!-- <script src="classes/URL.js"></script>
     <script src="classes/DataBase.js"></script> -->
   </head>
   <body>
     <div id="center">
+      <h1 id="title">Make It Shorter</h1>
+
       <div id="controlSection">
-        <h1 id="title">Make It Shorter</h1>
+        <h2>Paste the URL to be shortened</h2>
         <input type="url" id="urlInput" placeholder="insert an URL address" />
         <button id="submit">click</button>
       </div>
       <div id="statisticsSection">
-        <input type="text" id="searchUrl" placeholder="search an URL address" />
-        <button id="search">search</button>
+        <div id="searchinputs">
+          <input
+            type="text"
+            id="searchUrl"
+            placeholder="search an URL address"
+          />
+          <button id="search">search</button>
+        </div>
+        <div id="statistics"></div>
       </div>
     </div>
     <script src="/public/main.js"></script>
