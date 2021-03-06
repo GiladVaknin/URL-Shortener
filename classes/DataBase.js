@@ -68,7 +68,7 @@ class DataBase {
       const direct = this.URLS.findIndex((urlObj) => urlObj.shortedUrl === url);
       if (direct === -1) {
         reject(() => {
-          throw new Error("URL wasn't shorted");
+          throw new Error("URL wasn't shorted", 404);
         });
       } else {
         this.URLS[direct].redirectCount++;

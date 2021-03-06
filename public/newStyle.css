@@ -26,18 +26,32 @@ body {
 }
 
 #controlSection {
+  grid-row: 1;
+}
+
+#firstDiv {
   grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 40% 60%;
+}
+
+#lastShorted {
+  grid-row: 2;
 }
 
 #statisticsSection {
   grid-row: 3/4;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 20% 80%;
+  grid-template-rows: 20% 20% 60%;
+}
+#statisticsSection h2 {
+  grid-row: 1;
 }
 
 #searchinputs {
-  grid-row: 1;
+  grid-row: 2;
 }
 
 #statistics {
@@ -49,6 +63,16 @@ body {
 }
 
 #submit {
+  background-color: #196666;
+  border: none;
+  color: white;
+  padding: 5px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+#lastShower {
   background-color: #196666;
   border: none;
   color: white;
@@ -115,4 +139,22 @@ body {
   color: black;
   font-weight: 800;
   background-color: #99e6e6;
+}
+
+#newShorted {
+  color: black;
+}
+
+#search:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+#submit:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#lastShower:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }

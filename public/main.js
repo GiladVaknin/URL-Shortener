@@ -14,6 +14,8 @@ const searchInput = document.getElementById("searchUrl");
 const searchButton = document.getElementById("search");
 const statistics = document.getElementById("statistics");
 const controlSection = document.getElementById("controlSection");
+const lastFive = document.getElementById("lastShower");
+const lastShorted = document.getElementById("lastShorted");
 
 button.addEventListener("click", () => {
   if (input.value != "") {
@@ -28,7 +30,7 @@ button.addEventListener("click", () => {
 function shortUrlLink(shortUrl) {
   linkSpan.innerHtml = "";
   linkSpan.innerText = "";
-  const link = document.createElement("a");
+  const link = newElem("a", "newShorted");
   link.innerText = "\n" + server + "shortURL/new/" + shortUrl;
   link.setAttribute("href", link.innerText);
   linkSpan.append(link);
@@ -75,6 +77,29 @@ searchButton.addEventListener("click", () => {
       );
     });
   } else {
+    throw new Error(422);
     alert("please enter URL adress");
   }
+});
+
+lastFive.addEventListener("click", () => {
+  axios.get("/shortURL/lastFiveURLS").then((str) => {
+    lastShorted.innerHTML = "";
+    let urlsArr = str.data.split(",");
+    if (urlsArr.length <= 5) {
+      for (let i = urlsArr.length; i >= 0; i--) {
+        const link = document.createElement("a");
+        link.innerText = "\n" + server + "shortURL/new/" + urlsArr[i];
+        link.setAttribute("href", link.innerText);
+        lastShorted.append(link);
+      }
+    } else {
+      for (let i = urlsArr.length - 2; i >= urlsArr.length - 6; i--) {
+        const link = document.createElement("a");
+        link.innerText = "\n" + server + "shortURL/new/" + urlsArr[i];
+        link.setAttribute("href", link.innerText);
+        lastShorted.append(link);
+      }
+    }
+  });
 });

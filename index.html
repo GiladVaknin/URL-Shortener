@@ -23,13 +23,18 @@
   <body>
     <div id="center">
       <h1 id="title">Make It Shorter</h1>
-
-      <div id="controlSection">
-        <h2>Paste the URL to be shortened</h2>
-        <input type="url" id="urlInput" placeholder="insert an URL address" />
-        <button id="submit">click</button>
+      <div id="firstDiv">
+        <div id="controlSection">
+          <h2>Paste the URL to be shortened</h2>
+          <input type="url" id="urlInput" placeholder="insert an URL address" />
+          <button id="submit">submit</button>
+          <button id="lastShower" class="button">Last 5</button>
+        </div>
+        <div id="lastShorted"></div>
       </div>
+
       <div id="statisticsSection">
+        <h2>Search your shorted URL to see statistics</h2>
         <div id="searchinputs">
           <input
             type="text"

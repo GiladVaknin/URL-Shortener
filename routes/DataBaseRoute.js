@@ -20,8 +20,8 @@ router.route("/new/:url").get((req, res) => {
 router.route("/").post((req, res) => {
   db.addUrl(req.body.url)
     .then((data) => {
-      if (data) res.send(data.shortedUrl);
-      else res.send(db.URLS[db.URLS.length - 1].shortedUrl);
+      if (data) res.status(200).send(data.shortedUrl);
+      else res.status(200).send(db.URLS[db.URLS.length - 1].shortedUrl);
     })
     .catch((e) => {
       res.status(400).send(e);
@@ -39,6 +39,18 @@ router.get("/statistic/:shorturlId", (req, res) => {
     .catch((e) => {
       res.status(404).send(e);
     });
+});
+
+router.get("/lastFiveURLS", (req, res) => {
+  if (db.URLS.length === 0) {
+    res.status(404).send(e);
+  } else {
+    let str = " ";
+    for (let i = 0; i < db.URLS.length; i++) {
+      str += db.URLS[i].shortedUrl + ",";
+    }
+    res.send(str);
+  }
 });
 
 module.exports = router;
