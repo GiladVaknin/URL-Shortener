@@ -55,8 +55,8 @@ body {
 }
 
 #statistics {
-  grid-row: 2;
-  font-size: 12px;
+  grid-row: 3;
+  font-size: 24px;
   text-align: justify;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
@@ -109,36 +109,45 @@ body {
 }
 
 #creationDateStat {
+  grid-column: 1;
   display: flex;
   text-align: center;
   color: black;
   font-weight: 800;
   background-color: #99e6e6;
+  border: 2px solid #196666;
 }
 
 #redirectCountStat {
+  grid-column: 2;
   display: flex;
   text-align: center;
   color: black;
   font-weight: 800;
   background-color: #99e6e6;
+  border: 2px solid #196666;
 }
 #originalUrlStat {
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: flex;
-  text-align: center;
+  display: flex; */
+  word-wrap: break-word;
+  grid-column: 4;
+  text-align: justify;
   color: black;
   font-weight: 800;
   background-color: #99e6e6;
+  border: 2px solid #196666;
 }
 #shortlUrStat {
+  grid-column: 3;
   display: flex;
   text-align: center;
   color: black;
   font-weight: 800;
   background-color: #99e6e6;
+  border: 2px solid #196666;
 }
 
 #newShorted {

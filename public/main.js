@@ -50,10 +50,10 @@ function showStatistics(creationDate, redirectCount, originalUrl, shorturl) {
   const redirectCountDiv = newElem("div", "redirectCountStat");
   const originalUrlDiv = newElem("div", "originalUrlStat");
   const shortUrlDiv = newElem("div", "shortlUrStat");
-  creationDateDiv.innerText = " Creation Date:\n" + creationDate;
-  redirectCountDiv.innerText = "Redirect Count :\n" + redirectCount;
-  originalUrlDiv.innerText = "Original URL : \n" + originalUrl;
-  shortUrlDiv.innerText = "Shorted URL : \n" + shorturl;
+  creationDateDiv.innerText = " Creation Date:\n\n" + creationDate;
+  redirectCountDiv.innerText = "Redirect Count :\n\n" + redirectCount;
+  originalUrlDiv.innerText = "Original URL :\n \n" + originalUrl;
+  shortUrlDiv.innerText = "Shorted URL : \n\n" + shorturl;
   statistics.append(
     creationDateDiv,
     redirectCountDiv,

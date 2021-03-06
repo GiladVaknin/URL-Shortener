@@ -37,18 +37,24 @@ let shortedUrls = JSON.parse(fs.readFileSync("./bins/ShortedURLS.json"));
 //   expect(req.status).toBe(400);
 // });
 
-// test("Check the redirect counter", async () => {
-//   let urlObj = shortedUrls[0];
-//   const counter = urlObj.redirectCount;
-//   const response = await request(app).get(`/shortURL/new/${urlObj.shortedUrl}`);
-//   expect(urlObj.redirectCount).toBe(counter + 1);
-// });
+test("Check the redirect counter", async () => {
+  let urlObj = shortedUrls[0];
+  console.log(urlObj);
+  const counter = urlObj.redirectCount;
+  const response = await request(app).get(`/shortURL/new/${urlObj.shortedUrl}`);
+  setTimeout(async () => {
+    shortedUrls = await JSON.parse(fs.readFileSync("./bins/ShortedURLS.json"));
+    urlObj = shortedUrls[0];
+    expect(urlObj.redirectCount).toBe(counter + 1);
+  }, 5000);
+});
 
 test("Add an URL", async () => {
-  const response = await request(app)
-    .post("/shortURL")
-    .type("form")
-    .send({ url: "https://www.youtube.com/watch?v=_8gHHBlbziw&t=1136s%22%7D" });
-  //   expect(response.status).toBe(201);
-  expect(response.text).toEqual("gggggg");
+  setTimeout(async () => {
+    const response = await request(app).post("/shortURL/", {
+      url: "https://www.youtube.com/watch?v=_8gHHBlbziw&t=1136s%22%7D",
+    });
+    console.log(response);
+    expect(response.status).toBe(200);
+  }, 5000);
 });
