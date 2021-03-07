@@ -33,6 +33,7 @@ function shortUrlLink(shortUrl) {
   const link = newElem("a", "newShorted");
   link.innerText = "\n" + server + "shortURL/new/" + shortUrl;
   link.setAttribute("href", link.innerText);
+  link.setAttribute("target", "_blank");
   linkSpan.append(link);
   controlSection.append(linkSpan);
   input.value = "";
@@ -91,6 +92,7 @@ lastFive.addEventListener("click", () => {
         const link = document.createElement("a");
         link.innerText = "\n" + server + "shortURL/new/" + urlsArr[i];
         link.setAttribute("href", link.innerText);
+        link.setAttribute("target", "_blank");
         lastShorted.append(link);
       }
     } else {
@@ -98,6 +100,7 @@ lastFive.addEventListener("click", () => {
         const link = document.createElement("a");
         link.innerText = "\n" + server + "shortURL/new/" + urlsArr[i];
         link.setAttribute("href", link.innerText);
+        link.setAttribute("target", "_blank");
         lastShorted.append(link);
       }
     }

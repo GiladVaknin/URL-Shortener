@@ -39,7 +39,6 @@ let shortedUrls = JSON.parse(fs.readFileSync("./bins/ShortedURLS.json"));
 
 test("Check the redirect counter", async () => {
   let urlObj = shortedUrls[0];
-  console.log(urlObj);
   const counter = urlObj.redirectCount;
   const response = await request(app).get(`/shortURL/new/${urlObj.shortedUrl}`);
   setTimeout(async () => {
@@ -54,7 +53,12 @@ test("Add an URL", async () => {
     const response = await request(app).post("/shortURL/", {
       url: "https://www.youtube.com/watch?v=_8gHHBlbziw&t=1136s%22%7D",
     });
-    console.log(response);
     expect(response.status).toBe(200);
   }, 5000);
+});
+
+test("Get method test checks if the new shorted url is send the client to the original url.", async () => {
+  let urlObj = shortedUrls[0];
+  const response = await request(app).get(`/shortURL/new/${urlObj.shortedUrl}`);
+  console.log(response);
 });

@@ -1,6 +1,6 @@
 # ![Scale-Up Velocity](./readme-files/logo-main.png) Final 1 - URL shortner 📎
 
-In this project you will create your own [URL shortener](https://en.wikipedia.org/wiki/URL_shortening)!
+In this project I created my own [URL shortener](https://en.wikipedia.org/wiki/URL_shortening)!
 
 This repository includes a basic template for starting the project:
 
@@ -40,6 +40,7 @@ Optionally, You can create a github [action](https://docs.github.com/en/actions)
 - Use a `class DataBase{}` to read/write (**Asynchronously**) all data in your back-end (you can use a json file as persistent layer)
 
 - Add another functionality to your service: a statistics route (`api/statistic/:shorturl-id`) that will respond with the following data per `shorturl-id`:
+
   - `creationDate` - a SQLDate format
   - `redirectCount` - the amount of times this url was used for redirection
   - `originalUrl`
@@ -70,6 +71,7 @@ Optionally, You can create a github [action](https://docs.github.com/en/actions)
 - Git usage: meaningful commit messages, small commits, folder and file structures, README file, issues, etc...
 
 ## Submitting
+
 - Submit your solution repo link - an open PR from your dev branch to the main one
 - Your readme should have a [`repl.it`](https://repl.it/) link with your solutions.
 - Submit a link to your repo to the CRM.

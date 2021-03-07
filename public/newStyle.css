@@ -60,6 +60,7 @@ body {
   text-align: justify;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 80% 20%;
 }
 
 #submit {
@@ -128,10 +129,6 @@ body {
   border: 2px solid #196666;
 }
 #originalUrlStat {
-  /* white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: flex; */
   word-wrap: break-word;
   grid-column: 4;
   text-align: justify;
@@ -166,4 +163,14 @@ body {
 #lastShower:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#githubLink {
+  grid-row: 2;
+  grid-column: 1/5;
+  align-items: center;
+  text-align: center;
+}
+#githubLink i:hover {
+  color: #196666;
 }
