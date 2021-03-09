@@ -1,7 +1,7 @@
 // const { json } = require("body-parser");
 // const { url } = require("inspector");
 
-const server = "http://localhost:3000/";
+const server = window.location.origin;
 axios.defaults.baseURL = server;
 
 const input = document.getElementById("urlInput");
@@ -31,7 +31,7 @@ function shortUrlLink(shortUrl) {
   linkSpan.innerHtml = "";
   linkSpan.innerText = "";
   const link = newElem("a", "newShorted");
-  link.innerText = "\n" + server + "shortURL/new/" + shortUrl;
+  link.innerText = "\n" + server + "/shortURL/new/" + shortUrl;
   link.setAttribute("href", link.innerText);
   link.setAttribute("target", "_blank");
   linkSpan.append(link);
@@ -90,7 +90,7 @@ lastFive.addEventListener("click", () => {
     if (urlsArr.length <= 5) {
       for (let i = urlsArr.length; i >= 0; i--) {
         const link = document.createElement("a");
-        link.innerText = "\n" + server + "shortURL/new/" + urlsArr[i];
+        link.innerText = "\n" + server + "/shortURL/new/" + urlsArr[i];
         link.setAttribute("href", link.innerText);
         link.setAttribute("target", "_blank");
         lastShorted.append(link);
@@ -98,7 +98,7 @@ lastFive.addEventListener("click", () => {
     } else {
       for (let i = urlsArr.length - 2; i >= urlsArr.length - 6; i--) {
         const link = document.createElement("a");
-        link.innerText = "\n" + server + "shortURL/new/" + urlsArr[i];
+        link.innerText = "\n" + server + "/shortURL/new/" + urlsArr[i];
         link.setAttribute("href", link.innerText);
         link.setAttribute("target", "_blank");
         lastShorted.append(link);
